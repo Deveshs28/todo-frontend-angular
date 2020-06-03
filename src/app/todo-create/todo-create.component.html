@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Enter Title To Create New</h2>
+  <hr />
+  <div class="row" style="text-align: left;">
+    <div class="col-md-12">
+      <form #createTodoForm="ngForm" (ngSubmit)="createTodo()">
+        <div class="form-group">
+          <label class="label-title" for="todoTitle">Todo Title</label>
+          <input
+            type="text"
+            name="todoTitle"
+            [(ngModel)]="todoTitle"
+            #title="ngModel"
+            class="form-control"
+            placeholder="Enter Todo Title"
+            required
+            id="todoTitle"
+          />
+        </div>
+        <div
+          [hidden]="title.valid || title.pristine"
+          class="alert alert-danger"
+        >
+          Todo Title is required
+        </div>
+        <div class="align-Center mt-5">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!createTodoForm.form.valid"
+          >
+            Create
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-loading-bar *ngIf="loading"></app-loading-bar>

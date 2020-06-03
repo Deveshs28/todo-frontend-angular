@@ -1,0 +1,21 @@
+<h2>Todo Details</h2>
+<hr />
+<div class="titleBar mt-2">
+  <h2 class="title">Todo Title</h2>
+  <div>
+    <button
+      class="btn btn-sm btn-primary addTodoItemButton"
+      (click)="addTodoItem()"
+    >
+      Add Todo Item
+    </button>
+  </div>
+</div>
+<div class="mt-5">
+  <ul *ngIf="todoItem.length > 0">
+    <li *ngFor="let todo of todoItem; let i = index">
+      <app-child-item [todo]="todo" [index]="i + 1"></app-child-item>
+    </li>
+  </ul>
+</div>
+<app-loading-bar *ngIf="loading"></app-loading-bar>

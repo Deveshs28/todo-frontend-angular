@@ -1,0 +1,43 @@
+<div class="title">
+  {{ index }}&nbsp;<span class="number-dot"></span>&nbsp;
+  {{ todo.todoItem.title }}
+  <div class="buttonsDiv">
+    <button
+      class="btn btn-sm btn-primary"
+      (click)="addTodoSubItem(todo.todoItem)"
+    >
+      Add Item
+    </button>
+    <button
+      class="btn btn-sm btn-primary mar-left"
+      (click)="editItem(todo.todoItem)"
+    >
+      Edit
+    </button>
+    <button
+      class="btn btn-sm btn-primary mar-left"
+      (click)="deleteTodoItem(todo.todoItem)"
+    >
+      Delete
+    </button>
+    <button
+      class="btn btn-sm btn-primary mar-left"
+      (click)="markDoneItem(todo.todoItem)"
+      *ngIf="!todo.todoItem.completed"
+    >
+      Mark Done
+    </button>
+    <button
+      class="btn btn-sm btn-primary mar-left"
+      (click)="openAgainItem(todo.todoItem)"
+      *ngIf="todo.todoItem.completed"
+    >
+      Open Again
+    </button>
+  </div>
+  <ul ng-if="todo.child">
+    <li *ngFor="let todo of todo.child; let i = index">
+      <app-child-item [todo]="todo" [index]="i + 1"></app-child-item>
+    </li>
+  </ul>
+</div>

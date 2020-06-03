@@ -1,0 +1,46 @@
+.label-title {
+  font-size: 16px;
+  margin-top: 1em;
+}
+
+.align-Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.custom-alert {
+  font-size: 14px;
+}
+
+.customButton {
+  width: 30%;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .label-title {
+    font-size: 14px;
+  }
+
+  input {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .customButton {
+    font-size: 16px;
+    width: 40%;
+  }
+}

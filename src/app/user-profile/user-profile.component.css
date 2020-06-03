@@ -1,0 +1,88 @@
+h2 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.contactInfo {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.heading {
+  font-size: 16px;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  font-weight: bold;
+}
+
+.user-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.name-group {
+  margin: auto;
+  width: 100%;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+li {
+  display: inline;
+}
+
+.loadMore {
+  width: 17rem;
+  margin-left: 5px;
+}
+
+.loadMoreButton {
+  margin-top: 0.7rem;
+  width: 10rem;
+}
+
+.logoutButton {
+  width: 30%;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .contactInfo {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .heading {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+
+  .card-link {
+    font-size: 12px;
+  }
+
+  .user-title {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .logoutButton {
+    width: 40%;
+  }
+}

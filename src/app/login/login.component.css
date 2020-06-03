@@ -1,0 +1,78 @@
+.login-btn {
+  margin: 20px 0;
+}
+
+.form-input {
+  width: 70vw;
+}
+
+h2 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.align-Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: block;
+}
+
+.container {
+  width: 50%;
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 1em;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
+
+.align-right {
+  float: right;
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    background-color: #fff;
+    margin-top: 30%;
+    padding: 5px;
+  }
+
+  h2 {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  a {
+    font-size: 14px;
+  }
+}

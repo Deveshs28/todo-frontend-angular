@@ -1,0 +1,51 @@
+ul,
+li {
+  list-style: none;
+  margin-top: 10px;
+}
+
+button {
+  background: sienna;
+  width: 100px;
+  font-size: 16px;
+}
+
+.number-dot {
+  height: 3px;
+  width: 3px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mar-left {
+  margin-left: 5px;
+}
+
+.mar-right {
+  margin-right: 5px;
+}
+
+.buttonsDiv {
+  margin-left: 1%;
+  vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 14px;
+    font-style: normal;
+  }
+
+  button {
+    background: sienna;
+    font-size: 12px;
+    font-weight: normal;
+    width: 100px;
+  }
+
+  .buttonsDiv {
+    margin-left: 5%;
+    vertical-align: middle;
+  }
+}

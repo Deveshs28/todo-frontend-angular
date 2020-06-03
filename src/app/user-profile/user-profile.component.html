@@ -1,0 +1,91 @@
+<h2>{{ userInfo.firstName }} {{ userInfo.lastName }}</h2>
+<p class="contactInfo">
+  E: {{ userInfo.email }} | Tel: {{ userInfo.mobileNumber }}
+</p>
+<hr />
+<p class="heading">Friend List</p>
+<ul class="d-flex justify-content-start" *ngIf="friendList.length > 0">
+  <li *ngFor="let friend of friendList; let i = index">
+    <div class="card loadMore">
+      <div class="card-body text-center">
+        <h5
+          *ngIf="isSenderAndUserSame(friend.senderId)"
+          class="card-title mb-3 user-title"
+        >
+          {{ friend.receiverName }}
+        </h5>
+        <h5
+          *ngIf="!isSenderAndUserSame(friend.senderId)"
+          class="card-title mb-3 user-title"
+        >
+          {{ friend.senderName }}
+        </h5>
+        <a
+          [routerLink]="['/home']"
+          [queryParams]="{ userId: friend.senderId }"
+          *ngIf="friend.requestApproved"
+          class="card-link"
+          >View Todos</a
+        >
+        <a
+          class="card-link"
+          *ngIf="
+            !friend.requestApproved && !isSenderAndUserSame(friend.senderId)
+          "
+          (click)="acceptRequest(i)"
+          >Accept Request</a
+        >
+        <h5
+          *ngIf="
+            !friend.requestApproved && isSenderAndUserSame(friend.senderId)
+          "
+          class="card-title mb-3 user-title"
+        >
+          Request Sent
+        </h5>
+      </div>
+    </div>
+  </li>
+  <li class="text-center" *ngIf="friendList.length > 0">
+    <div class="card loadMore loadMoreButton">
+      <div class="card-body">
+        <h5 class="card-title mb-3 user-title" (click)="loadMoreFriends()">
+          Load More
+        </h5>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<hr class="mt-5" />
+<p class="heading">Friend Suggestions</p>
+<div class="friendContainer">
+  <ul class="d-flex justify-content-start" *ngIf="allUsers.length > 0">
+    <li *ngFor="let user of allUsers; let i = index">
+      <div class="card loadMore">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-3 user-title">
+            {{ user.firstName }} {{ user.lastName }}
+          </h5>
+          <a class="card-link" (click)="sendUserRequest(i)">Send Request</a>
+        </div>
+      </div>
+    </li>
+    <li class="text-center" *ngIf="allUsers.length > 0">
+      <div class="card loadMore loadMoreButton">
+        <div class="card-body">
+          <h5 class="card-title mb-3 user-title" (click)="loadMoreUsers()">
+            Load More
+          </h5>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="mt-5 mr-4 d-flex justify-content-end">
+  <button class="btn btn-primary logoutButton" type="button" (click)="logout()">
+    Logout
+  </button>
+</div>
+<app-loading-bar *ngIf="loading"></app-loading-bar>

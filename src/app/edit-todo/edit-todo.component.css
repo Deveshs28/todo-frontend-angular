@@ -1,0 +1,42 @@
+.align-Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.align-right {
+  float: right;
+  display: flex;
+  flex-direction: row;
+}
+
+.marg-left {
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .custom-alert {
+    font-size: 14px;
+  }
+
+  .customButton {
+    font-size: 14px;
+    padding: 5px 20px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+}

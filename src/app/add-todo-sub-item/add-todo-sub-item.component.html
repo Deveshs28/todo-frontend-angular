@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>Add Sub Item In TODO</h2>
+  <hr />
+  <div class="row" style="text-align: left;">
+    <div class="col-md-12">
+      <form #addTodoItemForm="ngForm" (ngSubmit)="addSubTodoItem()">
+        <div class="form-group text-center">
+          <input
+            type="text"
+            name="todoItemTitle"
+            [(ngModel)]="todoItemTitle"
+            #title="ngModel"
+            class="form-control mt-3"
+            placeholder="Enter Sub Item Title"
+            required
+          />
+        </div>
+        <div
+          [hidden]="title.valid || title.pristine"
+          class="alert alert-danger custom-alert"
+        >
+          Todo Sub Item Title is required
+        </div>
+        <div class="align-Center mt-5">
+          <button
+            type="submit"
+            class="btn btn-primary customButton"
+            [disabled]="!addTodoItemForm.form.valid"
+          >
+            Add
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-loading-bar *ngIf="loading"></app-loading-bar>

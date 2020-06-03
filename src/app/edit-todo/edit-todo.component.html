@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Edit Item Title</h2>
+  <hr />
+  <div class="row" style="text-align: left;">
+    <div class="col-md-12">
+      <form #addTodoItemForm="ngForm" (ngSubmit)="editTodoItem()">
+        <div class="form-group text-center">
+          <input
+            type="text"
+            name="todoItemTitle"
+            [(ngModel)]="todoItemTitle"
+            #itemTitle="ngModel"
+            class="form-control mt-3"
+            placeholder="Enter Sub Item Title"
+            required
+          />
+        </div>
+        <div
+          [hidden]="itemTitle.valid || itemTitle.pristine"
+          class="alert alert-danger custom-alert"
+        >
+          Todo Sub Item Title Is Required
+        </div>
+        <div class="align-right mt-5">
+          <button
+            type="submit"
+            class="btn btn-primary customButton"
+            [disabled]="!addTodoItemForm.form.valid"
+          >
+            Update
+          </button>
+
+          <button
+            class="btn btn-primary marg-left customButton"
+            (click)="performUndoOperation()"
+          >
+            Undo
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-loading-bar *ngIf="loading"></app-loading-bar>
